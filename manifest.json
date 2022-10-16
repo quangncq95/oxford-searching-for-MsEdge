@@ -1,0 +1,28 @@
+{
+  "name": "Oxford dictionary",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "description": "An extension to show oxford dictionary page of words.",
+  "icons": {
+
+    "128": "icons/oxford.jpg"
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content-scripts/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "images/*.jpeg"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
