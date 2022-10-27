@@ -1,4 +1,3 @@
-console.log("initiliazing")
 
 
 //Ultis
@@ -14,7 +13,6 @@ function getSelectionText() {
 
 function detectLeftButton(evt) {
     evt = evt || window.event;
-    console.log(evt)
     if ("which" in evt) {
         return evt.which == 1;
     }else if("button" in evt){
@@ -26,8 +24,6 @@ function detectLeftButton(evt) {
 
 function handleMouseUp(event){
     var selectedText = getSelectionText()
-    console.log(selectedText)
-    console.log(detectLeftButton(event))
     if(detectLeftButton(event) ){
         if(selectedText !==''){
             var requestData = {

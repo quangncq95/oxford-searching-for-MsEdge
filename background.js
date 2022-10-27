@@ -1,15 +1,14 @@
 function onRequest(request, sender, callback){    
     const searchWord = request.word
-    console.log(request)
     if(request.action == 'create'){
-             chrome.contextMenus.remove("123")
-            var contextItemProperties = {};
-            contextItemProperties.title = `look up : ${searchWord}`;
-            contextItemProperties.id="123";
-            contextItemProperties.contexts=["selection"]
-            chrome.contextMenus.create(contextItemProperties);
+             chrome.contextMenus.remove("123",()=>{
+                 var contextItemProperties = {};
+                 contextItemProperties.title = `Look up : ${searchWord}`;
+                 contextItemProperties.id="123";
+                 contextItemProperties.contexts=["selection"]
+                 chrome.contextMenus.create(contextItemProperties);
+             })
     }else if(request.action == "remove"){
-        //  chrome.contextMenus.remove("123")
     }
  } 
 
